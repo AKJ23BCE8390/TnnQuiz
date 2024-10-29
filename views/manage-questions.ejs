@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Questions for Quiz - Admin</title>
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+
+  <!-- Admin Header -->
+  <%- include("partials/adminHeader.ejs") %>
+
+  <!-- Main Content -->
+  <div class="question-management">
+    <h1>Manage Questions for Quiz: <%= quiz.title %></h1>
+
+    <!-- Question Creation Form -->
+    <div class="question-creation">
+      <h2>Create a New Question</h2>
+      <form action="/admin/create-question/<%= quiz.id %>" method="POST">
+        
+        <div class="input-group">
+          <label for="question-text">Question</label>
+          <input type="text" id="question-text" name="question" placeholder="Enter the question" required>
+        </div>
+
+        <!-- Answer Options -->
+        <div class="input-group">
+          <label for="option-a">Option A</label>
+          <input type="text" id="option-a" name="option_a" placeholder="Enter Option A" required>
+        </div>
+        <div class="input-group">
+          <label for="option-b">Option B</label>
+          <input type="text" id="option-b" name="option_b" placeholder="Enter Option B" required>
+        </div>
+        <div class="input-group">
+          <label for="option-c">Option C</label>
+          <input type="text" id="option-c" name="option_c" placeholder="Enter Option C" required>
+        </div>
+        <div class="input-group">
+          <label for="option-d">Option D</label>
+          <input type="text" id="option-d" name="option_d" placeholder="Enter Option D" required>
+        </div>
+
+        <!-- Correct Answer -->
+        <div class="input-group">
+          <label for="correct-answer">Correct Answer</label>
+          <select id="correct-answer" name="correct_answer" required>
+            <option value="A">Option A</option>
+            <option value="B">Option B</option>
+            <option value="C">Option C</option>
+            <option value="D">Option D</option>
+          </select>
+        </div>
+
+        <!-- Toughness Level -->
+        <div class="input-group">
+          <label for="toughness">Toughness</label>
+          <select id="toughness" name="toughness" required>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn">Add Question</button>
+      </form>
+    </div>
+
+    <!-- List of Existing Questions -->
+    <div class="question-list">
+      <h2>Existing Questions</h2>
+      <ul>
+        <% questions.forEach(question => { %>
+          <li>
+            <p><strong>Q:</strong> <%= question.question %></p>
+            <p><strong>Options:</strong> A) <%= question.option_a %>, B) <%= question.option_b %>, C) <%= question.option_c %>, D) <%= question.option_d %></p>
+            <p><strong>Correct Answer:</strong> <%= question.correct_answer %> | <strong>Toughness:</strong> <%= question.toughness %></p>
+            <a href="/admin/edit-question/<%= question.id %>" class="btn">Edit</a>
+            <a href="/admin/delete-question/<%= question.id %>" class="btn btn-delete">Delete</a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    padding: 15px 0;
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header .logo img {
+    height: 50px;
+  }
+  
+  header .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  header .nav-links li {
+    margin-left: 20px;
+  }
+  
+  header .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+  }
+  
+  header .nav-links a:hover {
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  header .login-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  header .signup-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  header .login-btn:hover, 
+  header .signup-btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+  
+  footer a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    header nav {
+      flex-direction: column;
+    }
+  
+    header .nav-links {
+      flex-direction: column;
+    }
+  
+    header .nav-links li {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+
+  /* Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Content Wrapper to contain everything except the footer */
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Main Content Area */
+  main {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  /* Header Styles */
+  header {
+    background-color: #333;
+    padding: 15px 0;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header .logo img {
+    height: 50px;
+  }
+  
+  header .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  header .nav-links li {
+    margin-left: 20px;
+  }
+  
+  header .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    font-weight: bold;
+  }
+  
+  header .nav-links a:hover {
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 5px;
+  }
+  
+  header .login-btn {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  header .signup-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+  }
+  
+  footer a {
+    color: #ffcc00;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    header nav {
+      flex-direction: column;
+    }
+  
+    header .nav-links {
+      flex-direction: column;
+    }
+  
+    header .nav-links li {
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+  
+  

@@ -1,0 +1,115 @@
+/* Global resets */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Preloader styles */
+.preloader {
+    background: #000 url("/my-react-app/public/images/spin7.gif") no-repeat center center;
+    background-size: 20%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+/* Background video styles */
+.background-video {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Set behind content */
+    object-fit: cover; /* Ensure the video covers the entire background */
+    filter: brightness(55%);
+}
+
+/* Content styles */
+.content {
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    text-align: center;
+    color: white;
+}
+
+/* Title styles */
+.content>#title {
+    font-size: 2.2rem;
+    margin-bottom: 30px; /* Space between title and button */
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
+    overflow: hidden; /* Hide overflow text if necessary */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+/* Logo styles */
+#logo img {
+    width: 350px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+
+
+/* Button styles */
+
+.explore-button {
+    background: linear-gradient(145deg, #4CAF50, #45a049); /* Gradient background */
+    color: white; /* White text */
+    padding: 12px 24px; /* Increased padding for a bigger button */
+    font-family: 'Roboto', sans-serif; /* Change to Roboto font */
+    font-size: 18px; /* Slightly larger font size */
+    border: none; /* No border */
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* No underline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Multi-layered shadow for depth */
+    transition: transform 0.3s, background 0.4s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    display: inline-block; /* Ensures button adapts to content */
+    position: relative; /* For positioning pseudo-elements */
+    overflow: hidden; /* To contain pseudo-elements */
+}
+
+/* Button hover effect */
+.explore-button:hover {
+    background: linear-gradient(145deg, #45a049, #4CAF50); /* Reversed gradient on hover */
+    transform: translateY(-4px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Button active effect */
+.explore-button:active {
+    transform: translateY(-2px); /* Slightly reduced lift when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow back to normal */
+}
+
+/* Optional: Adding an inset shadow for a pressed effect */
+.explore-button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 80%);
+    transition: opacity 0.3s;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+}
+
+.explore-button:hover::after {
+    opacity: 1; /* Show inset shadow on hover */
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    
+}
+

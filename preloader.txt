@@ -1,0 +1,12 @@
+ <div class="preloader"></div>
+ <script>
+      var loader = document.getElementsByClassName("preloader")[0];
+      var content = document.getElementsByTagName("h1")[0];
+
+      window.addEventListener("load", function(){
+          setTimeout(function(){
+              loader.style.display = "none";  // Hide the preloader
+              content.style.display = "block"; // Show the content (h1)
+          }, 2000); // Delay of 3000 milliseconds (3 seconds)
+      });
+    </script>

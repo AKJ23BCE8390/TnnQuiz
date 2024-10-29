@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="styles/nav.css">
+</head>
+<body>
+
+  <!-- Content Wrapper to contain everything except the footer -->
+  <div class="content-wrapper">
+
+    <!-- Include Header -->
+    <%- include('partials/dashboard-header') %>
+
+    <!-- Dashboard Main Content -->
+    <main class="dashboard-container">
+      <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+          <li><a href="/student-dashboard">Overview</a></li>
+          <li><a href="/quizzes">My Quizzes</a></li>
+          <li><a href="/performance">Performance</a></li>
+          <li><a href="/account-settings">Account Settings</a></li>
+        </ul>
+      </aside>
+
+      <section class="dashboard-content">
+        <h1>Welcome, <%- name %></h1>
+
+        <!-- Overview Section -->
+        <div class="overview">
+          <h2>Recent Quizzes</h2>
+          <div class="quiz-list">
+            <div class="quiz-card">
+              <h3>Math Quiz</h3>
+              <p>Date: Sept 8, 2024</p>
+              <p>Score: 85%</p>
+              <a href="/quiz-results/1" class="btn">View Results</a>
+            </div>
+            <div class="quiz-card">
+              <h3>Science Quiz</h3>
+              <p>Date: Sept 1, 2024</p>
+              <p>Score: 92%</p>
+              <a href="/quiz-results/2" class="btn">View Results</a>
+            </div>
+            <!-- Add more quizzes here -->
+          </div>
+        </div>
+
+        <!-- Performance Summary Section -->
+        <div class="performance-summary">
+          <h2>Performance Summary</h2>
+          <div class="performance-metrics">
+            <div class="metric-card">
+              <h3>Total Quizzes Taken</h3>
+              <p>10</p>
+            </div>
+            <div class="metric-card">
+              <h3>Average Score</h3>
+              <p>88%</p>
+            </div>
+            <div class="metric-card">
+              <h3>Best Score</h3>
+              <p>98%</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div> <!-- End of Content Wrapper -->
+
+  <!-- Include Footer -->
+  <%- include('partials/footer') %>
+
+</body>
+</html>

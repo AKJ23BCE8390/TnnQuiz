@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Quizzes - Admin</title>
+  <link rel="stylesheet" href="styles/admin.css">
+  <link rel="stylesheet" href="styles/nav.css">
+</head>
+<style>
+  /* Quiz Management Page Styles */
+.quiz-management {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.quiz-creation {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.quiz-creation h2 {
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  margin-left: 10px;
+}
+
+.quiz-list {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.quiz-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.quiz-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.quiz-list li h3 {
+  margin: 0;
+}
+
+</style>
+<body>
+
+  <!-- Admin Header -->
+  <%- include("partials/adminHeader.ejs") %>
+
+  <!-- Main Content -->
+  <div class="quiz-management">
+    <h1>Quiz Management</h1>
+
+    <!-- Quiz Creation Form -->
+    <div class="quiz-creation">
+      <h2>Create a New Quiz</h2>
+      <form action="/admin/create-quiz" method="POST">
+        <div class="input-group">
+          <label for="quiz-title">Quiz Title</label>
+          <input type="text" id="quiz-title" name="title" placeholder="Enter quiz title" required>
+        </div>
+
+        <div class="input-group">
+          <label for="quiz-description">Description</label>
+          <textarea id="quiz-description" name="description" placeholder="Enter a brief description of the quiz" required></textarea>
+        </div>
+
+        <div class="input-group">
+          <label for="quiz-questions">Number of Questions</label>
+          <input type="number" id="quiz-questions" name="num_questions" placeholder="Enter number of questions" required>
+        </div>
+
+        <div class="input-group">
+          <label for="quiz-time">Time Limit (in minutes)</label>
+          <input type="number" id="quiz-time" name="time_limit" placeholder="Enter time limit for quiz" required>
+        </div>
+
+        <button type="submit" class="btn">Create Quiz</button>
+      </form>
+    </div>
+
+    <!-- List of Existing Quizzes -->
+    <div class="quiz-list">
+      <h2>Existing Quizzes</h2>
+      <ul>
+        <% quizzes.forEach(quiz => { %>
+          <li>
+            <h3><%= quiz.title %></h3>
+            <p><%= quiz.description %></p>
+            <p>Questions: <%= quiz.num_questions %> | Time Limit: <%= quiz.time_limit %> minutes</p>
+            <a href="/admin/manage-questions/<%= quiz.id %>" class="btn">Add Questions</a>
+            <a href="/admin/edit-quiz/<%= quiz.id %>" class="btn">Edit</a>
+            <a href="/admin/delete-quiz/<%= quiz.id %>" class="btn btn-delete">Delete</a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

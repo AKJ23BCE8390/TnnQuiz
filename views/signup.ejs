@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sign Up - Student</title>
+  <link rel="stylesheet" href="styles/signup.css">
+  <link rel="stylesheet" href="styles/nav.css">
+</head>
+<body>
+
+  <div class="content-wrapper">
+    
+    <!-- Navigation Bar -->
+    <%- include("partials/header.ejs") %>
+
+    <!-- Signup Section -->
+    <section class="auth-container">
+      <h1>Student Sign Up</h1>
+      <div class="auth-box">
+        <h2>Create a New Account</h2>
+        <form action="/register" method="post">
+          <div class="input-group">
+            <label for="student-name">Name</label>
+            <input type="text" id="student-name" name="name" placeholder="Enter your full name" aria-label="Full Name" required>
+          </div>
+          <div class="input-group">
+            <label for="student-email">Email</label>
+            <input type="email" id="student-email" name="email" placeholder="Enter your email" aria-label="Email" required>
+          </div>
+          <div class="input-group">
+            <label for="student-password">Password</label>
+            <input type="password" id="student-password" name="password" placeholder="Enter your password" aria-label="Password" required>
+            <!-- Password toggle script and icon -->
+          </div>
+          <div class="input-group">
+            <label for="student-confirm-password">Confirm Password</label>
+            <input type="password" id="student-confirm-password" name="confirm_password" placeholder="Confirm your password" aria-label="Confirm Password" required>
+          </div>
+          <button type="submit" class="btn">Sign Up</button>
+          
+          <!-- Display error message if passwords don't match -->
+          <div class="error-message" id="error-message"></div>
+        </form>
+        
+        <!-- Sign Up with Google -->
+        <div class="google-signup">
+          <p>Or</p>
+          <a href="/auth/google" class="btn google-btn">
+            <img src="images/googleLogo.png" alt="Google Logo">
+            Sign Up with Google
+          </a>
+        </div>
+
+        <div class="login-link">
+          <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+      </div>
+    </section>
+
+  </div> <!-- End of Content Wrapper -->
+
+  <!-- Footer -->
+  <%- include("partials/footer.ejs") %>
+
+  <script>
+    // Password visibility toggle logic here
+    // Password match validation
+    document.querySelector('form').addEventListener('submit', function(event) {
+      const password = document.getElementById('student-password').value;
+      const confirmPassword = document.getElementById('student-confirm-password').value;
+      if (password !== confirmPassword) {
+        event.preventDefault();
+        document.getElementById('error-message').textContent = "Passwords do not match.";
+      }
+    });
+  </script>
+
+</body>
+</html>

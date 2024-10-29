@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="styles/admin.css">
+  <link rel="stylesheet" href="styles/nav.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <%- include("partials/adminHeader.ejs") %>
+
+
+  <!-- Main Content -->
+  <div class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+
+    <!-- Dashboard Options -->
+    <div class="dashboard-options">
+      
+      <!-- Manage Quizzes -->
+      <div class="dashboard-card">
+        <img src="images/fun-quiz-pic.png" alt="Manage Quizzes">
+        <h2>Manage Quizzes</h2>
+        <p>Create, update, and delete quizzes.</p>
+        <a href="/admin/manage-quizzes" class="btn">Go to Quiz Management</a>
+      </div>
+
+      <!-- View Users -->
+      <div class="dashboard-card">
+        <img src="images/AdminUser.webp" alt="View Users">
+        <h2>View Users</h2>
+        <p>View and manage registered users.</p>
+        <a href="/admin/manage-users" class="btn">Go to User Management</a>
+      </div>
+
+      <!-- View Reports -->
+      <div class="dashboard-card">
+        <img src="images/AdminReport.jpg" alt="View Reports">
+        <h2>View Reports</h2>
+        <p>Access quiz reports and user performance.</p>
+        <a href="/admin/reports" class="btn">Go to Reports</a>
+      </div>
+
+    </div>
+  </div>
+   <br>
+   <br>
+  <!-- Footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+</html>

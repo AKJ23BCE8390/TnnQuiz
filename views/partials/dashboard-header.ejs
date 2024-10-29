@@ -1,0 +1,82 @@
+<style>
+    /* Dashboard Header Styles */
+.dashboard-header {
+  background-color: #333;
+  padding: 15px 0;
+}
+
+.dashboard-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dashboard-header .logo img {
+  height: 50px;
+}
+
+.dashboard-header .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-header .nav-links li {
+  margin-left: 20px;
+}
+
+.dashboard-header .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.dashboard-header .nav-links a:hover {
+  background-color: #ffcc00;
+  color: #333;
+  border-radius: 5px;
+}
+
+.dashboard-header .start-quiz-btn {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.dashboard-header .logout-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.dashboard-header .start-quiz-btn:hover {
+  background-color: #218838;
+}
+
+.dashboard-header .logout-btn:hover {
+  background-color: #c82333;
+}
+
+</style>
+
+<header class="dashboard-header">
+    <nav>
+      <div class="logo">
+        <a href="/student-dashboard"><img src="images/logo.png" alt="Dashboard Logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/quizzes">My Quizzes</a></li>
+        <li><a href="/start-quiz" class="start-quiz-btn">Start Quiz</a></li>
+        <li><a href="/account-settings">Account</a></li>
+        <li><a href="/logout" class="logout-btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  

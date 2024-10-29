@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login - Student / Admin</title>
+  <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/nav.css">
+</head>
+<body>
+
+  <!-- Content Wrapper to contain everything except the footer -->
+  <div class="content-wrapper">
+    
+    <!-- Navigation Bar -->
+    <%- include("partials/header.ejs") %>
+
+    <!-- Authentication Section -->
+    <section class="auth-container">
+      <h1>Login as Student or Admin</h1>
+      <div class="auth-forms">
+        
+        <!-- Student Login Form -->
+        <div class="auth-box">
+          <h2>Student Login</h2>
+          <form action="/login" method="POST">
+            <div class="input-group">
+              <label for="student-email">Email</label>
+              <input type="email" id="student-email" name="username" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+              <label for="student-password">Password</label>
+              <input type="password" id="student-password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login as Student</button>
+          </form>
+
+          <!-- Google Sign-In Button -->
+          <div class="google-login">
+            <p>Or</p>
+            <a href="/auth/google" class="btn-google">
+              <button type="submit" class="btn">
+              <img src="images/googleLogo.png" alt="Google Logo" style="width: 5%;">
+              Continue with Google
+              </button>
+            </a>
+          </div>
+
+          <!-- Sign Up as New User Link -->
+          <div class="signup-link">
+            <p>New User? <a href="/signup">Sign up here</a></p>
+          </div>
+        </div>
+
+        <!-- Admin Login Form -->
+        <div class="auth-box">
+          <h2>Admin Login</h2>
+          <form action="/admin" method="get">
+            <div class="input-group">
+              <label for="admin-email">Email</label>
+              <input type="email" id="admin-email" name="email" placeholder="Enter your admin email" required>
+            </div>
+            <div class="input-group">
+              <label for="admin-password">Password</label>
+              <input type="password" id="admin-password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="btn">Login as Admin</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </div> <!-- End of Content Wrapper -->
+
+  <!-- Footer -->
+  <%- include("partials/footer.ejs") %>
+
+</body>
+</html>
